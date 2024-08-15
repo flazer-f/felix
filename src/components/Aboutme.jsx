@@ -3,6 +3,8 @@ import illsoft from'../assets/images/undraw/illsoft.svg'
 import { useNotification } from './NotificationContext';
 import axios from 'axios';
 import '../Style/notification.css';
+import flazerResume from '../assets/flazerResume.pdf';
+
 
 function Aboutme() {
   const { addNotification } = useNotification();
@@ -52,9 +54,9 @@ function Aboutme() {
                         <p>Building a successful product is a challenge. I am highly energetic in user experience design, interfaces and web development.</p>
                         
                         <div className="custom-btn-group mt-4">
-                          <a href="/resume.pdf" download className="btn mr-lg-2 custom-btn">
-                            <i className='uil uil-file-alt'></i> Download Resume
-                          </a>
+                        <a href={flazerResume} download className="btn mr-lg-2 custom-btn">
+  <i className="uil uil-file-alt"></i> Download Resume
+</a>
                           <a onClick={handleButtonClick} className="btn custom-btn custom-btn-bg custom-btn-link">Stay Motivated</a>
                         </div>
                     </div>
