@@ -10,23 +10,23 @@ function Aboutme() {
   const { addNotification } = useNotification();
 
   const fetchQuote = async () => {
-      try {
-          const response = await axios.get('/api/random'); // Adjusted endpoint
-          const quoteData = response.data[0];
-          return {
-              message: quoteData.q,
-              author: quoteData.a,
-              image: 'path_to_your_image' // Replace with actual image path if available
-          };
-      } catch (error) {
-          console.error('Error fetching quote:', error);
-          return {
-              message: 'Stay positive and keep pushing forward!',
-              author: 'Unknown',
-              // image: 'path_to_fallback_image' // Replace with fallback image path if available
-          };
-      }
-  };
+    try {
+        const response = await axios.get('https://api.quotable.io/random');
+        const quoteData = response.data;
+        return {
+            message: quoteData.content, // Updated to access 'content' for the quote text
+            author: quoteData.author,   // Updated to access 'author' for the author name
+            image: 'path_to_your_image' // Replace with actual image path if available
+        };
+    } catch (error) {
+        console.error('Error fetching quote:', error);
+        return {
+            message: 'Stay positive and keep pushing forward!',
+            author: 'Unknown',
+        };
+    }
+};
+
   
     const handleButtonClick = async () => {
       const { message, author, image } = await fetchQuote();
