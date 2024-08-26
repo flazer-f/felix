@@ -1,4 +1,9 @@
 import React from 'react'
+import proj1 from '../assets/images/project/proj1.jpg'
+import proj2 from '../assets/images/project/proj2.jpg'
+import proj3 from '../assets/images/project/proj3.jpg'
+import proj4 from '../assets/images/project/proj4.jpg'
+
 
 function Qual() {
   return (
@@ -97,10 +102,10 @@ function Qual() {
                 <br />
                 <h4>Additional Certificates</h4>
                 <div className="card" style={{ width: "18rem" }}>
-                    <a href="https://onemapgoa.in/" className="">
+                    <a href="" className="">
                       <img
                         className="card-img-top"
-                        src=""
+                        src={proj1}
                         alt="Card image cap"
                       />
                       <div className="card-body">
@@ -109,10 +114,10 @@ function Qual() {
                     </a>
                   </div>
                   <div className="card" style={{ width: "18rem" }}>
-                    <a href="https://onemapgoa.in/" className="">
+                    <a href="" className="">
                       <img
                         className="card-img-top"
-                        src=""
+                        src={proj2}
                         alt="Card image cap"
                       />
                       <div className="card-body">
@@ -121,10 +126,10 @@ function Qual() {
                     </a>
                   </div>
                   <div className="card" style={{ width: "18rem" }}>
-                    <a href="https://onemapgoa.in/" className="">
+                    <a href="" className="">
                       <img
                         className="card-img-top"
-                        src=""
+                        src={proj3}
                         alt="Card image cap"
                       />
                       <div className="card-body">
@@ -133,10 +138,10 @@ function Qual() {
                     </a>
                   </div>
                   <div className="card" style={{ width: "18rem" }}>
-                    <a href="https://onemapgoa.in/" className="">
+                    <a href="" className="">
                       <img
                         className="card-img-top"
-                        src=""
+                        src={proj4}
                         alt="Card image cap"
                       />
                       <div className="card-body">
