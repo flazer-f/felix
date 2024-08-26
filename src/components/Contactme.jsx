@@ -62,15 +62,15 @@ function Contactme() {
           <div className="row">
             <div className="col-lg-5 mr-lg-5 col-12">
               <div className="google-map w-100">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=..."
-                  width="600"
-                  height="450"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
+              <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3850.2169688481767!2d73.99080457488522!3d15.201288185359367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfb2d2f3fe9fdf%3A0xd400480636a7acf6!2sCaritas%20Colony%2C%20Panzorconi%2C%20Cuncolim%2C%20Goa%20403715!5e0!3m2!1sen!2sin!4v1721988561959!5m2!1sen!2sin"
+        width="600"
+        height="450"
+        style={{ border: 0 }}
+        allowFullScreen=""
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
               </div>
               <div className="contact-info d-flex justify-content-between align-items-center py-4 px-lg-5">
                 <div className="contact-info-item">
