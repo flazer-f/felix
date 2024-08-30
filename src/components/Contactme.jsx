@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import socio1 from '../assets/images/project/whatsapp.png'
+import socio2 from '../assets/images/project/instagram.png'
+import socio3 from '../assets/images/project/linkedin.png'
+
 
 function Contactme() {
   const [formData, setFormData] = useState({
@@ -79,9 +83,9 @@ function Contactme() {
                   <p><a href="mailto:flazerdourado@gmail.com">flazerdourado@gmail.com</a></p>
                 </div>
                 <ul className="social-links">
-                  <li><a href="#" className="uil uil-dribbble"></a></li>
-                  <li><a href="#" className="uil uil-instagram"></a></li>
-                  <li><a href="#" className="uil uil-youtube"></a></li>
+                  <li><a href="https://wa.me/qr/3UZR6AVOTSLRB1" className="uil"><img src={socio1} className='sociolink' /></a></li>
+                  <li><a href="https://www.instagram.com/im_flazer?igsh=MXJoYWIxb2dzeGhlZg==" className="uil uil-instagram"><img src={socio2} className='sociolink' /></a></li>
+                  <li><a href="https://www.linkedin.com/in/flazer-dourado-aa096b27b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="uil"><img src={socio3} className='sociolink' /></a></li>
                 </ul>
               </div>
             </div>
