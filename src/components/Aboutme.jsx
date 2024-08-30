@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import illsoft from '../assets/images/undraw/illsoft.svg';
+import illsoft from '../assets/images/undraw/programmer.svg';
 import { useNotification } from './NotificationContext';
 import axios from 'axios';
 import '../Style/notification.css';
