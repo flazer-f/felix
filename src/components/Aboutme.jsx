@@ -1,10 +1,11 @@
 import React, { useRef } from 'react';
-import illsoft from '../assets/images/undraw/programmer.svg';
+import illsoft from '../assets/images/undraw/illsoft.svg';
 import { useNotification } from './NotificationContext';
 import axios from 'axios';
 import '../Style/notification.css';
 import flazerResume from '../assets/flazerResume.pdf';
 import clickSound from '../assets/audio/sound1.mp3'; // Import your local sound file
+
 
 
 // URL of a random online audio file

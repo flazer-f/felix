@@ -70,7 +70,7 @@ function Qual() {
                                   <span>2023</span>
                              </div>
                              <div className="timeline-info">
-                                  <h3><span>Bachlor Of Computer Application</span>
+                                  <h3><span>Bachelor Of Computer Application</span>
                                   <br /><small>VVM's Shree Damodar College Of Commerce And Economics</small></h3>
                                   {/* <p>Please tell your friends about Tooplate website. That would be very helpful. We need your support.</p> */}
                              </div>

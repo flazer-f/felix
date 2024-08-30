@@ -6,6 +6,8 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun,faMoon,faUserAstronaut} from '@fortawesome/free-solid-svg-icons';
 import { NavLink ,Link } from "react-router-dom";
+import Tooltip from '@mui/material/Tooltip';
+
 
 function Header() {
     const [isNavOpen, setIsNavOpen] = useState(false);
@@ -35,18 +37,26 @@ function Header() {
 
             <div className="collapse navbar-collapse"  style={{ display: isNavOpen ? 'block' : 'none' }} id="navbarNav">
                 <ul className="navbar-nav mx-auto">
+                    <Tooltip title="About Me">
                     <li className="nav-item">
                         <NavLink to="/" className="nav-link"><span data-hover="About">About</span></NavLink>
                     </li>
+                    </Tooltip>
+                    <Tooltip title="Projects">
                     <li className="nav-item">
                         <NavLink to="/Projects" className="nav-link"><span data-hover="Projects">Projects</span></NavLink>
                     </li>
+                    </Tooltip>
+                    <Tooltip title="Qualification">
                     <li className="nav-item">
                         <NavLink to="/Qual" className="nav-link"><span data-hover="Qualification">Qualification</span></NavLink>
                     </li>
+                    </Tooltip>
+                    <Tooltip title="Contact">
                     <li className="nav-item">
                         <NavLink to="/Contactme" className="nav-link"><span data-hover="Contact">Contact</span></NavLink>
                     </li>
+                    </Tooltip>
                 </ul>
 
                 {/* <ul className="navbar-nav ml-lg-auto">
