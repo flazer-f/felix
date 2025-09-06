@@ -9,8 +9,8 @@ function Footer() {
                <div className="row">
 
                     <div className="col-lg-12 col-12">                                
-                        <p className="copyright-text text-center">NO Copyright &copy; Flazer . No rights reserved</p>
-                        <p className="copyright-text text-center">Designed by <a rel="nofollow" href="https://github.com/flazer-f/testreacts">FLAZER</a></p>
+                        <p className="copyright-text text-center">&copy; Flazer – Made with ❤️ and React.</p>
+                        {/* <p className="copyright-text text-center">Designed by <a rel="nofollow" href="https://github.com/flazer-f/testreacts">FLAZER</a></p> */}
                     </div>
                     
                </div>

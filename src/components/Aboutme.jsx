@@ -5,6 +5,23 @@ import axios from 'axios';
 import '../Style/notification.css';
 import flazerResume from '../assets/flazerResume.pdf';
 import clickSound from '../assets/audio/sound1.mp3'; // Import your local sound file
+import { motion } from "framer-motion";
+import Tilt from "react-parallax-tilt";
+import { 
+  FaReact, FaJs, FaHtml5, FaCss3Alt, FaBootstrap, FaNodeJs, 
+  FaGitAlt, FaDatabase, FaNpm, FaPython, FaJava 
+} from "react-icons/fa";
+import { 
+  SiMongodb, SiMysql, SiNetlify, 
+  SiPostman, SiExpress, SiFramer, SiTailwindcss,
+  SiOpenai, SiChatbot, SiGooglegemini
+} from "react-icons/si";
+import { MdApi, MdSmartToy } from "react-icons/md";
+import { TiWeatherCloudy } from "react-icons/ti";
+import { BiCodeAlt, BiBrain } from "react-icons/bi";
+import { RiRobot2Fill } from "react-icons/ri";
+
+import "../Style/ProjectCrazy.css";
 
 
 
@@ -13,7 +30,11 @@ const clickSoundUrl = 'https://www.soundjay.com/button/beep-07.wav'; // Example 
 function Aboutme() {
     const { addNotification } = useNotification();
     const audioRef = useRef(null); // Reference for the audio element
-  
+
+    const fadeIn = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  };
     // Local fallback quotes array
     const localQuotes = [
       { message: 'The only limit to our realization of tomorrow is our doubts of today.', author: 'Franklin D. Roosevelt' },
@@ -28,6 +49,48 @@ function Aboutme() {
       { message: 'It’s not whether you get knocked down, it’s whether you get up.', author: 'Vince Lombardi' }
     ];
   
+  const techStackWithIcons = {
+    frontend: [
+      { name: "React", icon: <FaReact /> },
+      { name: "JavaScript", icon: <FaJs /> },
+      { name: "HTML5", icon: <FaHtml5 /> },
+      { name: "CSS3", icon: <FaCss3Alt /> },
+      { name: "Bootstrap", icon: <FaBootstrap /> },
+      { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+      { name: "Framer Motion", icon: <SiFramer /> },
+    ],
+    backend: [
+      { name: "Node.js", icon: <FaNodeJs /> },
+      { name: "Express", icon: <SiExpress /> },
+      { name: "MongoDB", icon: <SiMongodb /> },
+      { name: "MySQL", icon: <SiMysql /> },
+    ],
+    languages: [
+      { name: "JavaScript", icon: <FaJs /> },
+      { name: "Python", icon: <FaPython /> },
+      { name: "Java", icon: <FaJava /> },
+    ],
+    tools: [
+      { name: "Git", icon: <FaGitAlt /> },
+      { name: "VS Code", icon: <FaGitAlt /> },
+      { name: "Netlify", icon: <SiNetlify /> },
+      { name: "Postman", icon: <SiPostman /> },
+    ],
+    ai_tools: [
+      { name: "ChatGPT", icon: <SiOpenai /> },
+      { name: "GitHub Copilot", icon: <RiRobot2Fill /> },
+      { name: "Claude AI", icon: <BiBrain /> },
+      { name: "Gemini AI", icon: <SiGooglegemini /> },
+      { name: "AI Assistants", icon: <MdSmartToy /> },
+    ],
+    apis: [
+      { name: "REST APIs", icon: <MdApi /> },
+      { name: "Weather API", icon: <TiWeatherCloudy /> },
+      { name: "Web Speech API", icon: <BiCodeAlt /> },
+      { name: "Geolocation API", icon: <FaDatabase /> },
+    ]
+  };
+
     // Function to fetch the quote with a 3-second timer
     const fetchQuoteWithTimeout = async () => {
       try {
@@ -112,6 +175,52 @@ function Aboutme() {
               </div>
             </div>
           </div>
+
+
+
+        </section>
+        <section>
+                {/* Tech Stack Section */}
+  <div className="container mb-5">
+          <motion.div
+            className="row"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeIn}
+          >
+            <div className="col-lg-11 text-center mx-auto col-12">
+              <div className="col-lg-8 mx-auto">
+                <h2 >My Tech Stack</h2>
+              </div>
+              
+              <div className="tech-categories mt-4">
+                {Object.entries(techStackWithIcons).map(([category, technologies]) => (
+                  <motion.div 
+                    key={category} 
+                    className="tech-category mb-4"
+                    whileHover={{ scale: 1.02 }}
+                  >
+                    <h4 className="category-title">{category.toUpperCase()}</h4>
+                    <div className="tech-grid">
+                      {technologies.map((tech, idx) => (
+                        <motion.div
+                          key={idx}
+                          className="tech-item"
+                          whileHover={{ scale: 1.1, rotate: 5 }}
+                          whileTap={{ scale: 0.9 }}
+                        >
+                          <div className="tech-icon">{tech.icon}</div>
+                          <span className="tech-name">{tech.name}</span>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
         </section>
   
         {/* Hidden audio element to play local sound */}
