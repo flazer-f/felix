@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import emailjs from 'emailjs-com';
-import socio1 from '../assets/images/project/whatsapp.png'
-import socio2 from '../assets/images/project/instagram.png'
-import socio3 from '../assets/images/project/linkedin.png'
-
+import socio1 from '../assets/images/project/whatsapp.png';
+import socio2 from '../assets/images/project/instagram.png';
+import socio3 from '../assets/images/project/linkedin.png';
 
 function Contactme() {
   const [formData, setFormData] = useState({
@@ -58,43 +58,107 @@ function Contactme() {
     setFormData({ name: '', email: '', message: '' });
   };
 
+  // Animation variants
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  };
+
+  const fadeInLeft = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+  };
+
+  const fadeInRight = {
+    hidden: { opacity: 0, x: 50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
   return (
     <>
       {/* CONTACT FORM */}
-      <section className="contact py-5" id="contact">
+      <motion.section
+        className="contact py-5"
+        id="contact"
+        initial="hidden"
+        animate="visible"
+        variants={staggerContainer}
+      >
         <div className="container">
           <div className="row">
-            <div className="col-lg-5 mr-lg-5 col-12">
+            {/* Map Section */}
+            <motion.div
+              className="col-lg-5 mr-lg-5 col-12"
+              variants={fadeInLeft}
+            >
               <div className="google-map w-100">
-              <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3850.2169688481767!2d73.99080457488522!3d15.201288185359367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfb2d2f3fe9fdf%3A0xd400480636a7acf6!2sCaritas%20Colony%2C%20Panzorconi%2C%20Cuncolim%2C%20Goa%20403715!5e0!3m2!1sen!2sin!4v1721988561959!5m2!1sen!2sin"
-        width="600"
-        height="450"
-        style={{ border: 0 }}
-        allowFullScreen=""
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-      ></iframe>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3850.2169688481767!2d73.99080457488522!3d15.201288185359367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfb2d2f3fe9fdf%3A0xd400480636a7acf6!2sCaritas%20Colony%2C%20Panzorconi%2C%20Cuncolim%2C%20Goa%20403715!5e0!3m2!1sen!2sin!4v1721988561959!5m2!1sen!2sin"
+                  width="600"
+                  height="450"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
-              <div className="contact-info d-flex justify-content-between align-items-center py-4 px-lg-5">
+              <motion.div
+                className="contact-info d-flex justify-content-between align-items-center py-4 px-lg-5"
+                variants={fadeInUp}
+              >
                 <div className="contact-info-item">
                   <h3 className="mb-3 text-white">Say hello</h3>
                   <p className="footer-text mb-0">87677-13856</p>
-                  <p><a href="mailto:flazerdourado@gmail.com">flazerdourado@gmail.com</a></p>
+                  <p>
+                    <a href="mailto:flazerdourado@gmail.com">
+                      flazerdourado@gmail.com
+                    </a>
+                  </p>
                 </div>
                 <ul className="social-links">
-                  <li><a href="https://wa.me/qr/3UZR6AVOTSLRB1" className="uil"><img src={socio1} className='sociolink' /></a></li>
-                  <li><a href="https://www.instagram.com/im_flazer?igsh=MXJoYWIxb2dzeGhlZg==" className="uil uil-instagram"><img src={socio2} className='sociolink' /></a></li>
-                  <li><a href="https://www.linkedin.com/in/flazer-dourado-aa096b27b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="uil"><img src={socio3} className='sociolink' /></a></li>
+                  {[socio1, socio2, socio3].map((icon, index) => (
+                    <motion.li
+                      key={index}
+                      whileHover={{ scale: 1.2 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      <a href="#" className="uil">
+                        <img src={icon} className="sociolink" alt="social" />
+                      </a>
+                    </motion.li>
+                  ))}
                 </ul>
-              </div>
-            </div>
-            <div className="col-lg-6 col-12">
+              </motion.div>
+            </motion.div>
+
+            {/* Form Section */}
+            <motion.div
+              className="col-lg-6 col-12"
+              variants={fadeInRight}
+            >
               <div className="contact-form">
-                <h2 className="mb-4">Interested to work together? Let's talk</h2>
+                <h2 className="mb-4">
+                  Interested to work together? Let's talk
+                </h2>
                 <form onSubmit={handleSubmit}>
-                  <div className="row">
-                    <div className="col-lg-6 col-12">
+                  <motion.div
+                    className="row"
+                    variants={staggerContainer}
+                  >
+                    <motion.div
+                      className="col-lg-6 col-12"
+                      variants={fadeInUp}
+                    >
                       <input
                         type="text"
                         className="form-control"
@@ -104,8 +168,11 @@ function Contactme() {
                         value={formData.name}
                         onChange={handleChange}
                       />
-                    </div>
-                    <div className="col-lg-6 col-12">
+                    </motion.div>
+                    <motion.div
+                      className="col-lg-6 col-12"
+                      variants={fadeInUp}
+                    >
                       <input
                         type="email"
                         className="form-control"
@@ -115,8 +182,11 @@ function Contactme() {
                         value={formData.email}
                         onChange={handleChange}
                       />
-                    </div>
-                    <div className="col-12">
+                    </motion.div>
+                    <motion.div
+                      className="col-12"
+                      variants={fadeInUp}
+                    >
                       <textarea
                         name="message"
                         rows="6"
@@ -126,17 +196,24 @@ function Contactme() {
                         value={formData.message}
                         onChange={handleChange}
                       ></textarea>
-                    </div>
-                    <div className="ml-lg-auto col-lg-5 col-12">
-                      <input type="submit" className="form-control submit-btn" value="Send Message" />
-                    </div>
-                  </div>
+                    </motion.div>
+                    <motion.div
+                      className="ml-lg-auto col-lg-5 col-12"
+                      variants={fadeInUp}
+                    >
+                      <input
+                        type="submit"
+                        className="form-control submit-btn"
+                        value="Send Message"
+                      />
+                    </motion.div>
+                  </motion.div>
                 </form>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 }
