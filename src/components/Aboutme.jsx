@@ -7,12 +7,12 @@ import flazerResume from '../assets/flazerResume.pdf';
 import clickSound from '../assets/audio/sound1.mp3'; // Import your local sound file
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
-import { 
-  FaReact, FaJs, FaHtml5, FaCss3Alt, FaBootstrap, FaNodeJs, 
-  FaGitAlt, FaDatabase, FaNpm, FaPython, FaJava 
+import {
+  FaReact, FaJs, FaHtml5, FaCss3Alt, FaBootstrap, FaNodeJs,
+  FaGitAlt, FaDatabase, FaNpm, FaPython, FaJava
 } from "react-icons/fa";
-import { 
-  SiMongodb, SiMysql, SiNetlify, 
+import {
+  SiMongodb, SiMysql, SiNetlify,
   SiPostman, SiExpress, SiFramer, SiTailwindcss,
   SiOpenai, SiChatbot, SiGooglegemini
 } from "react-icons/si";
@@ -187,16 +187,10 @@ const Aboutme = () => {
                 <p>
                   Building a successful product is a challenge. I am highly energetic in user experience design, interfaces, and web development.
                 </p>
-                <div className="custom-btn-group mt-4">
-                  <a href={flazerResume} download className="btn mr-lg-2 custom-btn">
+                <div className="custom-btn-group mt-4 d-flex flex-wrap gap-3">
+                  <a href={flazerResume} download className="crazy-btn large">
                     <i className="uil uil-file-alt"></i> Download Resume
                   </a>
-                  <button
-                    onClick={handleButtonClick}
-                    className="btn custom-btn custom-btn-bg custom-btn-link"
-                  >
-                    Stay Motivated
-                  </button>
                 </div>
               </div>
             </motion.div>

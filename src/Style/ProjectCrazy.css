@@ -1,7 +1,10 @@
 /* Animated gradient background */
 .crazy-gradient-bg {
   position: fixed;
-  top: 0; left: 0; width: 100vw; height: 100vh;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: 0;
   background: linear-gradient(270deg, #ff00cc, #3333ff, #00ffcc, #ffcc00, #ff00cc);
   background-size: 1200% 1200%;
@@ -10,9 +13,17 @@
 }
 
 @keyframes crazyGradient {
-  0% {background-position:0% 50%}
-  50% {background-position:100% 50%}
-  100% {background-position:0% 50%}
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
 }
 
 /* Neon heading */
@@ -37,6 +48,7 @@
   box-shadow: 0 0 30px #00ffe7, 0 0 10px #ff00de;
   transition: transform 0.3s, box-shadow 0.3s;
 }
+
 .crazy-carousel-img:hover {
   transform: scale(1.07) rotate(-2deg);
   box-shadow: 0 0 60px #ff00de, 0 0 30px #00ffe7;
@@ -57,6 +69,7 @@
   transition: box-shadow 0.3s, border-color 0.3s;
   background: rgba(30, 30, 30, 0.85);
 }
+
 .crazy-card:hover {
   border-color: #00ffe7;
   box-shadow: 0 0 40px #00ffe7, 0 0 20px #ff00de;
@@ -161,4 +174,103 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.3rem;
+}
+
+/* CRAZY BUTTON STYLES - Premium Gold Theme */
+.crazy-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(30, 30, 30, 0.6);
+  /* Semi-transparent dark bg */
+  color: #ffc200;
+  /* Gold text */
+  border: 2px solid #ffc200;
+  border-radius: 50px;
+  padding: 14px 35px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  /* Subtle dark shadow */
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+.crazy-btn i {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.crazy-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 194, 0, 0.2), transparent);
+  /* Gold swipe */
+  transform: skewX(-25deg);
+  transition: left 0.5s ease;
+  z-index: -1;
+}
+
+.crazy-btn:hover {
+  color: #000;
+  /* background: #ffc200; */
+  /* Gold background on hover */
+  box-shadow: 0 0 30px rgba(255, 194, 0, 0.6), 0 0 10px rgba(255, 194, 0, 0.4);
+  transform: translateY(-3px) scale(1.02);
+  border-color: #ffc200;
+}
+
+.crazy-btn:hover i {
+  transform: rotate(-10deg) scale(1.2);
+}
+
+/* Large Button Variant */
+.crazy-btn.large {
+  padding: 18px 45px;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  border-width: 3px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  /* Stronger dark shadow */
+}
+
+.crazy-btn.large:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 0 40px rgba(255, 194, 0, 0.7);
+}
+
+/* Secondary Button (Stay Motivated) variant */
+.crazy-btn.secondary {
+  color: #fff;
+  border-color: #fff;
+  background: transparent;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.crazy-btn.secondary:hover {
+  color: #000;
+  background: #fff;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+  border-color: #fff;
+}
+
+@media (max-width: 768px) {
+  .crazy-btn {
+    width: 100%;
+    margin-bottom: 10px;
+    justify-content: center;
+  }
+
+  /* Override gap if needed or rely on flex-wrap */
 }
