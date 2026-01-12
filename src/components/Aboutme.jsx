@@ -193,9 +193,14 @@ const Aboutme = () => {
                     <span className="animated-item">Java Developer</span>
                   </div>
                 </h1>
-                <p>
-                  Building a successful product is a challenge. I am highly energetic in user experience design, interfaces, and web development.
-                </p>
+                <div className="bio-container mt-4">
+                  <p className="lead-text">
+                    I build solutions that speak for themselves. With over <span className="highlight-gold">2 years of experience</span> in architecting high-impact systems and crafting digital identities, my focus remains on <span className="highlight-white">function-first minimalism</span>.
+                  </p>
+                  <p className="sub-text mt-3">
+                    Bridging the complexity of <span className="highlight-gold">Java backends</span> with the elegance of <span className="highlight-gold">React frontends</span> to turn real-life problems into effortless digital experiences.
+                  </p>
+                </div>
                 <div className="custom-btn-group mt-4 d-flex flex-wrap gap-3">
                   <a href={flazerResume} download className="crazy-btn large">
                     <i className="uil uil-file-alt"></i> Download Resume
