@@ -32,7 +32,8 @@
     "react-icons": "^5.5.0",
     "react-owl-carousel": "^2.3.3",
     "react-parallax-tilt": "^1.7.307",
-    "react-responsive-carousel": "^3.2.23"
+    "react-responsive-carousel": "^3.2.23",
+    "react-tooltip": "^5.30.0"
   },
   "devDependencies": {
     "@types/bootstrap": "^5.2.10",
