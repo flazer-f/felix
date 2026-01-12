@@ -14,7 +14,8 @@ import {
 import { 
   SiMongodb, SiMysql, SiNetlify, 
   SiPostman, SiExpress, SiFramer, SiTailwindcss,
-  SiOpenai, SiChatbot, SiGooglegemini
+  SiOpenai, SiChatbot, SiGooglegemini, SiAngular, SiNextdotjs,
+  SiVuedotjs, SiGraphql, SiTypescript
 } from "react-icons/si";
 import { MdApi, MdSmartToy } from "react-icons/md";
 import { TiWeatherCloudy } from "react-icons/ti";
@@ -73,45 +74,53 @@ const Aboutme = () => {
   ];
 
   const techStackWithIcons = {
-    frontend: [
+    "Frontend Frameworks": [
       { name: "React", icon: <FaReact /> },
+      { name: "Angular", icon: <SiAngular /> },
+      { name: "Next.js", icon: <SiNextdotjs /> },
+      { name: "Vue.js", icon: <SiVuedotjs /> },
+    ],
+    "Frontend Languages": [
       { name: "JavaScript", icon: <FaJs /> },
+      { name: "TypeScript", icon: <SiTypescript /> },
       { name: "HTML5", icon: <FaHtml5 /> },
       { name: "CSS3", icon: <FaCss3Alt /> },
+    ],
+    "Frontend Styling & Animation": [
       { name: "Bootstrap", icon: <FaBootstrap /> },
       { name: "Tailwind CSS", icon: <SiTailwindcss /> },
       { name: "Framer Motion", icon: <SiFramer /> },
     ],
-    backend: [
+    "Backend & Databases": [
       { name: "Node.js", icon: <FaNodeJs /> },
       { name: "Express", icon: <SiExpress /> },
       { name: "MongoDB", icon: <SiMongodb /> },
       { name: "MySQL", icon: <SiMysql /> },
     ],
-    languages: [
+    "Programming Languages": [
       { name: "JavaScript", icon: <FaJs /> },
+      { name: "TypeScript", icon: <SiTypescript /> },
       { name: "Python", icon: <FaPython /> },
       { name: "Java", icon: <FaJava /> },
     ],
-    tools: [
+    "APIs & Query Languages": [
+      { name: "REST APIs", icon: <MdApi /> },
+      { name: "GraphQL", icon: <SiGraphql /> },
+      { name: "SOAP API", icon: <MdApi /> },
+      { name: "Weather API", icon: <TiWeatherCloudy /> },
+    ],
+    "Tools & Deployment": [
       { name: "Git", icon: <FaGitAlt /> },
-      { name: "VS Code", icon: <FaGitAlt /> },
       { name: "Netlify", icon: <SiNetlify /> },
       { name: "Postman", icon: <SiPostman /> },
+      { name: "NPM", icon: <FaNpm /> },
     ],
-    ai_tools: [
+    "AI Tools": [
       { name: "ChatGPT", icon: <SiOpenai /> },
       { name: "GitHub Copilot", icon: <RiRobot2Fill /> },
       { name: "Claude AI", icon: <BiBrain /> },
       { name: "Gemini AI", icon: <SiGooglegemini /> },
-      { name: "AI Assistants", icon: <MdSmartToy /> },
     ],
-    apis: [
-      { name: "REST APIs", icon: <MdApi /> },
-      { name: "Weather API", icon: <TiWeatherCloudy /> },
-      { name: "Web Speech API", icon: <BiCodeAlt /> },
-      { name: "Geolocation API", icon: <FaDatabase /> },
-    ]
   };
 
   // Function to fetch the quote with a 3-second timer
@@ -188,15 +197,14 @@ const Aboutme = () => {
                   Building a successful product is a challenge. I am highly energetic in user experience design, interfaces, and web development.
                 </p>
                 <div className="custom-btn-group mt-4">
-                  <a href={flazerResume} download className="btn mr-lg-2 custom-btn">
-                    <i className="uil uil-file-alt"></i> Download Resume
-                  </a>
+                 
                   <button
-                    onClick={handleButtonClick}
                     className="btn custom-btn custom-btn-bg custom-btn-link"
                   >
-                    Stay Motivated
-                  </button>
+
+                   <a href={flazerResume} download className="btn mr-lg-2 custom-btn">
+                    <i className="uil uil-file-alt"></i> Download Resume
+                  </a>                  </button>
                 </div>
               </div>
             </motion.div>
